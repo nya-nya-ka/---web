@@ -1,281 +1,244 @@
+body {
+  background-color: #929292;
+}
+
 .wrapper {
-  display: flex; /* 子要素をフレックスボックスで配置 */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  justify-content: center; /* 水平方向に中央揃え */
-  align-items: center; /* 垂直方向に中央揃え */
-  background-image: url('header6.png'); /* 背景画像を指定 */
-  background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
-  background-position: center; /* 画像を中央に配置 */
-  background-repeat: no-repeat; /* 画像を繰り返さない */
-  height: 100vh; /* 必要に応じて高さを指定 */
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.centered-image {
+  width: 66.66vw; /* 横幅の3分の2 */
+  height: calc((100vh - 80px) * 2 / 3); /* ヘッダーを引いた領域の高さの3分の2 */
+  object-fit: contain;
+  position: absolute;
+  top: 50%; /* 画面の中央に配置 */
+  left: 50%; /* 画面の中央に配置 */
+  transform: translate(-50%, -50%); /* 中央揃え */
+  pointer-events: none;
+  z-index: 0;
 }
 
 .page-title {
-  margin: 0 auto; /* 中央揃え */
-  font-family: 'Alegreya Sans SC', sans-serif; /* 指定されたフォントを適用 */
-  font-weight: 300; /* フォントの太さを指定 */
-  font-size: 3rem; /* 必要に応じてサイズを調整 */
-  text-align: center; /* 必要に応じて中央揃え */
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  animation: slideIn 1s ease-out
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  color: #9e9e9e;
+  text-align: left;
+  padding-left: 200px;
+  opacity: 0;
+  transform: translateY(30px);
+  z-index: 1;
 }
 
-
-@keyframes slideIn{
+@keyframes fadeUp {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(30px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
-.sub-title{
-  margin: 0 auto; /* 中央揃え */
-  font-family: 'Alegreya Sans SC', sans-serif; /* 指定されたフォントを適用 */
-  font-weight: 200; /* フォントの太さを指定 */
-  font-size: 1.4rem; /* 必要に応じてサイズを調整 */
-  text-align: center; /* 必要に応じて中央揃え */
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  animation: slideIn 1s ease-out
+.wrapper2 {
+  width: 100vw;
+  height: calc(100vh - 80px); /* ヘッダーを引いた高さに調整 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.section2-1{
-  padding-top:0px;
+.section2-1 {
+  padding-top: 0;
   padding-left: 150px;
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: normal;
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  font-size: 1.4rem; /* 必要に応じてサイズを調整 */
-  animation: slideIn 1s ease-out
+  color: #4d4a4a;
+  font-size: 1.3rem;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: none;
 }
 
-.section2-2{
-  padding-top:100px;
+.section2-3 {
+  padding-top: 100px;
   padding-left: 150px;
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  font-size: 1.3rem; /* 必要に応じてサイズを調整 */
-  animation: slideIn 1s ease-out
-}
-
-.section2-3{
-  padding-top:100px;
-  text-align: center; /* 必要に応じて中央揃え */
   font-family: "Klee One", cursive;
   font-weight: 400;
   font-style: normal;
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  font-size: 1.1rem; /* 必要に応じてサイズを調整 */
-  animation: slideIn 1s ease-out
+  color: #474747;
+  font-size: 1.05rem;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: none;
 }
 
-.section3{
-  padding-top: 0px; /* 上部の余白を確保 */
-  padding-bottom: 30px; /* 下部の余白を確保 */
-  margin: 0 auto; /* 中央揃え */
-  font-family: "Tangerine", cursive;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 2.5rem; /* 必要に応じてサイズを調整 */
-  text-align: center; /* 必要に応じて中央揃え */
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  animation: slideIn 1s ease-out;
-  position: relative; /* ::afterを配置するために必要 */
-  z-index: 1; /* 他の要素よりも低いレイヤーに配置 */
-}
-
-.section4{
-  padding-top: 60px; /* 上部の余白を確保 */
-  padding-bottom: 0px; /* 下部の余白を確保 */
-  margin: 0 auto; /* 中央揃え */
+.section4 {
+  padding-top: 60px;
   font-family: "Klee One", cursive;
   font-weight: 200;
   font-style: normal;
-  font-size: 1.1rem; /* 必要に応じてサイズを調整 */
-  text-align: center; /* 必要に応じて中央揃え */
-  color: #d3d3d3; /* フォントの色を白に設定 */
-  animation: slideIn 1s ease-out;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #a7a7a7;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.section3::after {
-  content: ""; /* 疑似要素を生成 */
-  display: block;
-  width: 50%; /* アンダーラインの長さを指定（必要に応じて調整） */
-  height: 1px; /* アンダーラインの太さを指定（細くする） */
-  background-color: #d3d3d3; /* アンダーラインの色 */
-  margin: 10px auto 0; /* 上に余白を追加し、中央揃え */
+.slide-in {
+  animation: fadeUp 2.0s ease-out forwards;
 }
 
-.wrapper2{
-  display: flex; /* 子要素をフレックスボックスで配置 */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  justify-content: center; /* 垂直方向に中央揃え */
-  background-image: url('header7.png'); /* 背景画像を指定 */
-  background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
-  background-position: center; /* 画像を中央に配置 */
-  background-repeat: no-repeat; /* 画像を繰り返さない */
-  height: 100vh;  /* 必要に応じて高さを指定 */
+header {
+  width: 100%;
+  float: left;
+  position: fixed;
+  top: 0;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 5px rgba(43, 43, 43, 0.3);
+  left: 0;
+  transition: 500ms;
+  transform: translateY(-100px);
+  z-index: 1000;
 }
 
-.wrapper3{
-  display: flex; /* 子要素をフレックスボックスで配置 */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  justify-content: center; /* 垂直方向に中央揃え */
-  background-image: url('star1.png'); /* 背景画像を指定 */
-  background-size: cover; /* 画像を要素全体に拡大縮小して表示 */
-  background-position: center; /* 画像を中央に配置 */
-  background-repeat: no-repeat; /* 画像を繰り返さない */
-  height: 100vh;  /* 必要に応じて高さを指定 */
-  z-index: 1; /* 他の要素よりも低いレイヤーに配置 */
+.visible {
+  transform: translateY(0);
 }
 
-header{
-    width: 100%;
-    float: left;
-    position: fixed;
-    top: 0;
-    background: rgb(0, 0, 0);
-    box-shadow: 0 0 5px rgba(43, 43, 43, 0.3);
-     left: 0;
-    transition:500ms;
-    -ms-transform: translate(0px,-100px);
-      -webkit-transform:translate(0px,-100px);
-      -moz-transform:translate(0px,-100px);
-      transform: translate(0px,-100px);
-      z-index: 1000; /* ヘッダーを最前面に配置 */
-  }
-  .visible{
-    -ms-transform: translate(0px,0px);
-    -moz-transform: translate(0px,0px);
-    -webkit-transform: translate(0px,0px);
-      transform: translate(0px,0px);
-  }
-  
-  .nav{
-    float: right;
-  
-    text-align: center;
-  }
-  .nav li{
-    float: left;
-     position: relative;
-  }
-  .nav li a{
-     float:left;
-    line-height: 100px;
-    color: #918f8f;
-    position: relative;
-    font-size: 16px;
-    height: 100px;
-    font-weight: 400;
-    overflow: hidden;
-    transition:500ms;
-     padding:0 25px;
-     font-family: 'Open Sans', sans-serif;
-     z-index:1;
-  }
-  
-  .nav li:after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    transition:500ms;
-  }
-  .nav li:hover:after{
-    height: 100%;
-    top: 0;
-    background:rgb(59, 59, 59);
-  }
-  .nav li.active:after{
-    height: 100%;
-    top: 0;
-    background:rgb(59, 59, 59);
-  }
-  
-  .nav li:hover a,.nav li.active a{
-    color: #ffffff;
-  
-  }
-  .logo{
-    line-height: 100px;
-    font-weight: 700;
-    color: #101010;
-    font-size: 50px;
-    text-align: center;
-    position: relative;
-    top: 0px;
-    height: 100px;
-    float: left;
-  }
-  .logo img{
-    position: relative;
-    top: 10px;
-    height: 80px;
-  }
-  
-  footer {
-    height: 200px; /* フッターの高さを300pxに設定 */
-    background-color: #000; /* 背景を黒色に設定 */
-    color: #fff; /* 文字色を白色に設定 */
-    display: flex; /* フレックスボックスで中央揃え */
-    justify-content: center; /* 水平方向に中央揃え */
-    align-items: center; /* 垂直方向に中央揃え */
-  }
-  
-  .footer-container {
-    text-align: center; /* テキストを中央揃え */
-  }
-  
-.footer-text{
-    font-family: "Libre Baskerville", serif;
-    font-size: 0.9rem; /* フォントサイズを調整 */
-    margin: 0; /* 余白をリセット */
-    color: #d3d3d3; /* フォントの色を白に設定 */
+.nav {
+  float: right;
+  text-align: center;
 }
 
-  .footer-text2 {
-    padding-top: 20px;
-    font-family: 'Alegreya Sans SC', sans-serif !important; /* 必要に応じてフォントを指定 */
-    font-size: 0.9rem; /* フォントサイズを調整 */
-    margin: 0; /* 余白をリセット */
-  }
+.nav li {
+  float: left;
+  position: relative;
+}
 
-  .material-icons{
-    vertical-align: middle; /* テキストとアイコンを縦方向で揃える */
-    font-size: 1rem; /* アイコンのサイズを調整 */
-    color: #fff; /* アイコンの色を白に設定 */
-    margin-right: 5px; /* アイコンとテキストの間に余白を追加 */
-  }
-  
-  
-  .container{
-     width: 100%;
-     max-width: 1170px;
-     padding:0 15px;
-     margin:0 auto;
-  }
-  
-  *,
-  *:after,
-  *::before {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      margin:0;
-      padding:0;
-      text-decoration: none;
-      list-style-type: none;
-      outline: none;
-  }
-  @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,800,400&subset=latin,latin-ext);
+.nav li a {
+  float: left;
+  line-height: 80px;
+  color: #918f8f;
+  position: relative;
+  font-size: 16px;
+  height: 80px;
+  font-weight: 400;
+  transition: 500ms;
+  padding: 0 25px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 1;
+}
 
- 
+.nav li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  transition: 500ms;
+}
+
+.nav li:hover:after,
+.nav li.active:after {
+  height: 100%;
+  top: 0;
+  background: rgb(59, 59, 59);
+}
+
+.nav li:hover a,
+.nav li.active a {
+  color: #ffffff;
+}
+
+.logo {
+  line-height: 100px;
+  font-weight: 700;
+  color: #101010;
+  font-size: 50px;
+  text-align: center;
+  height: 100px;
+  float: left;
+}
+
+.logo img {
+  height: 80px;
+  position: relative;
+  top: 10px;
+}
+
+footer {
+  height: 200px;
+  background-color: #000;
+  color: #9b9b9b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-text {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin: 0;
+  color: #9b9b9b;
+}
+
+.footer-text2 {
+  padding-top: 20px;
+  font-family: 'Alegreya Sans SC', sans-serif !important;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: 1rem;
+  color: #9b9b9b;
+  margin-right: 5px;
+}
+
+.material-symbols-outlined {
+  color: #c0c0c0;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.material-symbols-outlined:hover {
+  transform: scale(1.2);
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+*,
+*:after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+}
